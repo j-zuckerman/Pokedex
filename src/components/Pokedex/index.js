@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { PokedexContext } from '../../context';
+import { pad } from '../../util';
 import Card from '../../blocks/Card';
 
 export const Pokedex = () => {
@@ -14,10 +15,11 @@ export const Pokedex = () => {
             {pokemonEntry.name.charAt(0).toUpperCase() +
               pokemonEntry.name.slice(1)}
           </Card.Header>
-          <Card.Image
-            src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${
-              index + 1
-            }.png`}
+          <Card.PokemonImage
+            src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pad(
+              index + 1,
+              3
+            )}.png`}
           />
         </Card>
       ))}

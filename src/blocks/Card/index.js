@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Image from './Image';
+import PokemonImage from './PokemonImage';
 import Header from './Header';
 
 const Card = styled.div`
@@ -7,6 +7,6 @@ const Card = styled.div`
 `;
 
 Card.Header = Header;
-Card.Image = Image;
+Card.PokemonImage = PokemonImage;
 
 export default Card;

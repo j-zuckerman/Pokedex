@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const Image = styled.image`
+const PokemonImage = styled.img`
   height: 100px;
   width: 100px;
 `;
 
-export default Image;
+export default PokemonImage;
