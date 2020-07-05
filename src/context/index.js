@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import pokeApi from '../util';
+import pokeApi from '../util/api';
 
 export const PokedexContext = createContext();
 
@@ -13,7 +13,7 @@ const PokedexProvider = ({ children }) => {
   //Fetch all the pokemon names from PokeApi
   async function fetchPokemonEntries() {
     const response = await pokeApi.get('pokemon/?limit=807');
-
+    console.log(response.data.results);
     setPokemonEntries(response.data.results);
   }
 
