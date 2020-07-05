@@ -1,13 +1,20 @@
 import React, { useContext } from 'react';
 import { PokedexContext } from '../../context';
 import { pad } from '../../util';
+import styled from 'styled-components';
 import Card from '../../blocks/Card';
+
+const Layout = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
 
 export const Pokedex = () => {
   const { pokemonEntries } = useContext(PokedexContext);
 
   return (
-    <div>
+    <Layout>
       {pokemonEntries.map((pokemonEntry, index) => (
         <Card key={index + 1}>
           <Card.Header>
@@ -23,6 +30,6 @@ export const Pokedex = () => {
           />
         </Card>
       ))}
-    </div>
+    </Layout>
   );
 };
