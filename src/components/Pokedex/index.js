@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { PokedexContext } from '../../context';
 import { pad } from '../../util';
 import styled from 'styled-components';
@@ -16,19 +17,21 @@ export const Pokedex = () => {
   return (
     <Layout>
       {pokemonEntries.map((pokemonEntry, index) => (
-        <Card key={index + 1}>
-          <Card.Header>
-            <div>{index + 1}</div>
-            {pokemonEntry.name.charAt(0).toUpperCase() +
-              pokemonEntry.name.slice(1)}
-          </Card.Header>
-          <Card.PokemonImage
-            src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pad(
-              index + 1,
-              3
-            )}.png`}
-          />
-        </Card>
+        <Link to={`/pokemon/${index + 1}`} style={{ textDecoration: 'none' }}>
+          <Card key={index + 1}>
+            <Card.Header>
+              <div>{index + 1}</div>
+              {pokemonEntry.name.charAt(0).toUpperCase() +
+                pokemonEntry.name.slice(1)}
+            </Card.Header>
+            <Card.PokemonImage
+              src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pad(
+                index + 1,
+                3
+              )}.png`}
+            />
+          </Card>
+        </Link>
       ))}
     </Layout>
   );
