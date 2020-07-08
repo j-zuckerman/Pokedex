@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-const Label = styled.p`
-  color: pink;
-  font-size: 1.25rem;
+const Label = styled.span`
+  color: #151515;
+  font-size: 1.5rem;
+  margin-right: 1rem;
 `;
 
 export default Label;

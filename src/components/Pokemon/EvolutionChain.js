@@ -5,6 +5,11 @@ import { PokedexContext } from '../../context';
 export const EvolutionChain = ({ data }) => {
   const { evolutionDetails, fetchEvolutionChain } = useContext(PokedexContext);
 
+  const container = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    padding: '4rem',
+  };
   useEffect(() => {
     fetchEvolutionChain(data);
   }, [data]);
@@ -12,7 +17,7 @@ export const EvolutionChain = ({ data }) => {
   console.log(evolutionDetails);
   if (evolutionDetails.length != 0)
     return (
-      <div>
+      <div style={container}>
         {evolutionDetails.map((pokemon) => (
           <div>
             <img
@@ -21,8 +26,8 @@ export const EvolutionChain = ({ data }) => {
                 3
               )}.png`}
             />
+            <p>#{pokemon.id}</p>
             <p>{pokemon.species_name}</p>
-            <p>{pokemon.id}</p>
           </div>
         ))}
       </div>

@@ -32,27 +32,41 @@ export const Pokemon = () => {
         <PokemonContainer>
           <PokemonContainer.Details>
             <div>
-              <p>ID: {pokemon.id}</p>
-              <p>Height: {pokemon.height}</p>
-              <p>Weight: {pokemon.weight}</p>
-              <p>Abilities: </p>
-              {pokemon.abilities.map((ability) => (
-                <p>
-                  {ability.ability.name.charAt(0).toUpperCase() +
-                    ability.ability.name.slice(1)}
-                </p>
-              ))}
-              <p>Type: </p>
-              {pokemon.types.map((type) => (
-                <p>
-                  {type.type.name.charAt(0).toUpperCase() +
-                    type.type.name.slice(1)}
-                </p>
-              ))}
-              <p>Forms: </p>
-              {pokemon.forms.map((form) => (
-                <p>{form.name.charAt(0).toUpperCase() + form.name.slice(1)}</p>
-              ))}
+              <div>
+                <Label>ID</Label>
+                <Text> #{pokemon.id}</Text>
+              </div>
+
+              <div>
+                <Label>Height</Label>
+                <Text> {pokemon.height}</Text>
+              </div>
+
+              <div>
+                <Label>Weight</Label>
+                <Text>{pokemon.weight}</Text>
+              </div>
+
+              <div>
+                <Label>Abilities </Label>
+                {pokemon.abilities.map((ability) => (
+                  <span>{ability.ability.name}</span>
+                ))}
+              </div>
+
+              <div>
+                <Label>Type: </Label>
+                {pokemon.types.map((type) => (
+                  <span>{type.type.name}</span>
+                ))}
+              </div>
+
+              <div>
+                <Label>Forms: </Label>
+                {pokemon.forms.map((form) => (
+                  <span>{form.name}</span>
+                ))}
+              </div>
             </div>
           </PokemonContainer.Details>
           <PokemonContainer.PokemonImage>

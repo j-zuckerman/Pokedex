@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Text = styled.p`
+const Text = styled.span`
   color: blue;
   font-size: 1.15rem;
 `;
