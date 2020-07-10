@@ -18,7 +18,7 @@ export const Pokedex = () => {
 
   return (
     <>
-      <NavigationBar></NavigationBar>
+      <NavigationBar page={'Homepage'}></NavigationBar>
       <Layout>
         {pokemonEntries.map((pokemonEntry, index) => (
           <Link to={`/pokemon/${index + 1}`} style={{ textDecoration: 'none' }}>

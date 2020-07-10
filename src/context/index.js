@@ -25,6 +25,23 @@ const PokedexProvider = ({ children }) => {
     const response = await pokeApi.get(`pokemon/${pokemonId}`);
 
     console.log(response.data);
+
+    let statPercentages = [];
+    //Calculate max stat in order to come up with percentages.
+    const maxStat = response.data.stats.reduce((prev, current) =>
+      prev.base_stat > current.base_stat ? prev : current
+    );
+
+    response.data.stats.map((stat) =>
+      statPercentages.push(
+        ((stat.base_stat / maxStat.base_stat) * 100).toFixed(0)
+      )
+    );
+
+    response.data.stat_percentages = statPercentages;
+
+    console.log(response.data);
+
     setPokemon(response.data);
   }
 
