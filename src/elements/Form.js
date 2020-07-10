@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Ability = styled.span`
+const Form = styled.span`
   border-radius: 2px;
   padding: 2px 3px;
   margin-right: 6px;
@@ -9,4 +9,4 @@ const Ability = styled.span`
   text-transform: uppercase;
 `;
 
-export default Ability;
+export default Form;

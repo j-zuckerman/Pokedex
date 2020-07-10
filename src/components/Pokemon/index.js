@@ -7,12 +7,11 @@ import { pad } from '../../util';
 import Label from '../../elements/Label';
 import Text from '../../elements/Text';
 import StatBar from '../../elements/StatBar';
+import Ability from '../../elements/Ability';
+import Form from '../../elements/Form';
+import Type from '../../elements/Type';
 import { EvolutionChain } from './EvolutionChain';
 import { NavigationBar } from '../Navigation';
-
-const Container = styled.div`
-  margin-top: 4rem;
-`;
 
 export const Pokemon = () => {
   const {
@@ -33,50 +32,54 @@ export const Pokemon = () => {
   if (pokemon.length != 0 && pokemonSpecies.length != 0)
     return (
       <>
-        <NavigationBar></NavigationBar>
-        <Container>
-          <h2>{pokemon.name}</h2>
+        <NavigationBar className={pokemonSpecies.color.name}></NavigationBar>
+        <div className="container-fluid margin-t">
+          <h2 className="pokemon-name">{pokemon.name}</h2>
 
           <PokemonContainer>
             <PokemonContainer.Details>
-              <div>
-                <div>
-                  <Label>ID</Label>
-                  <Text> #{pokemon.id}</Text>
-                </div>
-
-                <div>
-                  <Label>Height</Label>
-                  <Text> {pokemon.height}</Text>
-                </div>
-
-                <div>
-                  <Label>Weight</Label>
-                  <Text>{pokemon.weight}</Text>
-                </div>
-
-                <div>
-                  <Label>Abilities </Label>
+              <table className="table table-borderless">
+                <tr>
+                  <td className="font-weight-bold">ID</td>
+                  <td>#{pokemon.id}</td>
+                </tr>
+                <tr>
+                  <td className="font-weight-bold">Height</td>
+                  <td>{pokemon.height}</td>
+                </tr>
+                <tr>
+                  <td className="font-weight-bold">Weight</td>
+                  <td>{pokemon.weight}</td>
+                </tr>
+                <tr>
+                  <td className="font-weight-bold">Abilities</td>
                   {pokemon.abilities.map((ability) => (
-                    <span>{ability.ability.name}</span>
+                    <td>
+                      <Ability className={pokemonSpecies.color.name}>
+                        {ability.ability.name}
+                      </Ability>
+                    </td>
                   ))}
-                </div>
-
-                <div>
-                  <Label>Type: </Label>
-
+                </tr>
+                <tr>
+                  <td className="font-weight-bold">Type</td>
                   {pokemon.types.map((type) => (
-                    <span>{type.type.name}</span>
+                    <td>
+                      <Type className={type.type.name}>{type.type.name}</Type>
+                    </td>
                   ))}
-                </div>
-
-                <div>
-                  <Label>Forms: </Label>
+                </tr>
+                <tr>
+                  <td className="font-weight-bold">Forms</td>
                   {pokemon.forms.map((form) => (
-                    <span>{form.name}</span>
+                    <td>
+                      <Form className={pokemonSpecies.color.name}>
+                        {form.name}
+                      </Form>
+                    </td>
                   ))}
-                </div>
-              </div>
+                </tr>
+              </table>
             </PokemonContainer.Details>
             <PokemonContainer.PokemonImage>
               <img
@@ -89,37 +92,37 @@ export const Pokemon = () => {
             <PokemonContainer.Stats>
               <StatBar>
                 <StatBar.Stat
-                  className="normal"
+                  className={pokemonSpecies.color.name}
                   style={{ width: `${pokemon.stat_percentages[0]}%` }}
                 >
                   HP: {pokemon.stats[0].base_stat}
                 </StatBar.Stat>
                 <StatBar.Stat
-                  className="normal"
+                  className={pokemonSpecies.color.name}
                   style={{ width: `${pokemon.stat_percentages[1]}%` }}
                 >
                   Attack: {pokemon.stats[1].base_stat}
                 </StatBar.Stat>
                 <StatBar.Stat
-                  className="normal"
+                  className={pokemonSpecies.color.name}
                   style={{ width: `${pokemon.stat_percentages[2]}%` }}
                 >
                   Defense: {pokemon.stats[2].base_stat}
                 </StatBar.Stat>
                 <StatBar.Stat
-                  className="normal"
+                  className={pokemonSpecies.color.name}
                   style={{ width: `${pokemon.stat_percentages[3]}%` }}
                 >
                   Special Attack: {pokemon.stats[3].base_stat}
                 </StatBar.Stat>
                 <StatBar.Stat
-                  className="normal"
+                  className={pokemonSpecies.color.name}
                   style={{ width: `${pokemon.stat_percentages[4]}%` }}
                 >
                   Special Defense: {pokemon.stats[4].base_stat}
                 </StatBar.Stat>
                 <StatBar.Stat
-                  className="normal"
+                  className={pokemonSpecies.color.name}
                   style={{ width: `${pokemon.stat_percentages[5]}%` }}
                 >
                   Speed: {pokemon.stats[5].base_stat}
@@ -132,7 +135,7 @@ export const Pokemon = () => {
               data={pokemonSpecies.evolution_chain.url}
             ></EvolutionChain>
           </div>
-        </Container>
+        </div>
       </>
     );
   else return null;

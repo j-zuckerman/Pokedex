@@ -2,6 +2,18 @@ body {
   background-color: whitesmoke;
 }
 
+.margin-t {
+  margin-top: 4rem;
+}
+.pokemon-name {
+  font-size: 2.25rem;
+  color: #6d6d6d;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
 .normal {
   background: #a8a77a;
 }
@@ -55,4 +67,54 @@ body {
 }
 .fairy {
   background: #d685ad;
+}
+
+.black {
+  background-color: #607d8b !important;
+  color: #fff !important;
+}
+
+.blue {
+  background-color: #81d4fa !important;
+  color: #fff !important;
+}
+
+.brown {
+  background-color: #bcaaa4 !important;
+  color: #fff !important;
+}
+
+.gray {
+  background-color: #a6a6a6 !important;
+  color: #fff !important;
+}
+
+.green {
+  background-color: #81c784 !important;
+  color: #fff !important;
+}
+
+.pink {
+  background-color: #f8bbd0 !important;
+  color: #fff !important;
+}
+
+.purple {
+  background-color: #ad8ee7 !important;
+  color: #fff !important;
+}
+
+.red {
+  background-color: #ff8a80 !important;
+  color: #fff !important;
+}
+
+.white {
+  background-color: #d5dbe1 !important;
+  color: #696969 !important;
+}
+
+.yellow {
+  background-color: #ffd600 !important;
+  color: #fff !important;
 }

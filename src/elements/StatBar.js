@@ -7,12 +7,12 @@ const StatBar = styled.ul`
 `;
 
 const Stat = styled.li`
-  height: 35px;
+  height: 40px;
   color: black;
   text-align: left;
   font-style: italic;
   font-weight: bolder;
-  font-size: 14px;
+  font-size: 1.2rem;
   line-height: 35px;
   padding: 0px 20px;
   margin-bottom: 5px;
