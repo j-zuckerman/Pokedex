@@ -32,8 +32,8 @@ export const Pokemon = () => {
   if (pokemon.length != 0 && pokemonSpecies.length != 0)
     return (
       <>
-        <NavigationBar className={pokemonSpecies.color.name}></NavigationBar>
-        <div className="container-fluid margin-t">
+        <NavigationBar data={pokemonSpecies.color.name}></NavigationBar>
+        <div>
           <h2 className="pokemon-name">{pokemon.name}</h2>
 
           <PokemonContainer>

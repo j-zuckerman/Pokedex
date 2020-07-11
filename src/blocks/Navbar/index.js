@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import FirstItem from './FirstItem';
 import LastItem from './LastItem';
 
-const Navbar = styled.div`
+const Navbar = styled.div.attrs((props) => ({ className: props.className }))`
   overflow: hidden;
   background-color: white;
   position: fixed;
