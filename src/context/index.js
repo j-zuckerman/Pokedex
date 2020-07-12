@@ -19,6 +19,9 @@ const PokedexProvider = ({ children }) => {
   async function fetchPokemonEntries() {
     const response = await pokeApi.get('pokemon/?limit=807');
     console.log(response.data.results);
+
+    response.data.results.map((entry, index) => (entry.index = index + 1));
+
     setPokemonEntries(response.data.results);
     setPokemonToDisplay(response.data.results);
   }
