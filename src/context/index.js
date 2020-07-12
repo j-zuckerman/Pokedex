@@ -48,7 +48,13 @@ const PokedexProvider = ({ children }) => {
   async function fetchPokemonSpecies(pokemonId) {
     const response = await pokeApi.get(`pokemon-species/${pokemonId}`);
 
+    const genus = response.data.genera.filter(
+      (genus) => genus.language.name == 'en'
+    )[0].genus;
+
+    response.data.genus = genus;
     console.log(response.data);
+
     setPokemonSpecies(response.data);
   }
 

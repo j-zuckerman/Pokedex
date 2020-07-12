@@ -26,8 +26,10 @@ export const EvolutionChain = ({ data }) => {
                 3
               )}.png`}
             />
-            <p>#{pokemon.id}</p>
-            <p>{pokemon.species_name}</p>
+            <p className="font-weight-bold">#{pokemon.id}</p>
+            <p className="font-weight-bold text-capitalize">
+              {pokemon.species_name}
+            </p>
           </div>
         ))}
       </div>

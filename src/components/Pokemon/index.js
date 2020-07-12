@@ -2,10 +2,8 @@ import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { PokedexContext } from '../../context';
 import PokemonContainer from '../../blocks/Pokemon';
-import styled from 'styled-components';
 import { pad } from '../../util';
-import Label from '../../elements/Label';
-import Text from '../../elements/Text';
+import Specie from '../../elements/Specie';
 import StatBar from '../../elements/StatBar';
 import Ability from '../../elements/Ability';
 import Form from '../../elements/Form';
@@ -34,8 +32,12 @@ export const Pokemon = () => {
       <>
         <NavigationBar data={pokemonSpecies.color.name}></NavigationBar>
         <div>
-          <h2 className="pokemon-name">{pokemon.name}</h2>
-
+          <div className="margin-t" style={{ textAlign: 'center' }}>
+            <h2 className="title">{pokemon.name}</h2>
+            <Specie className={pokemonSpecies.color.name}>
+              {pokemonSpecies.genus}
+            </Specie>
+          </div>
           <PokemonContainer>
             <PokemonContainer.Details>
               <table className="table table-borderless">
@@ -131,6 +133,7 @@ export const Pokemon = () => {
             </PokemonContainer.Stats>
           </PokemonContainer>
           <div>
+            <h2 className="title">Evolution Chain</h2>
             <EvolutionChain
               data={pokemonSpecies.evolution_chain.url}
             ></EvolutionChain>

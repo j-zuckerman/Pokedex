@@ -5,7 +5,8 @@ body {
 .margin-t {
   margin-top: 4rem;
 }
-.pokemon-name {
+
+.title {
   font-size: 2.25rem;
   color: #6d6d6d;
   text-transform: uppercase;
@@ -13,7 +14,6 @@ body {
   text-align: center;
   margin-top: 1.5rem;
 }
-
 .normal {
   background: #a8a77a;
 }
