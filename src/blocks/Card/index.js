@@ -7,6 +7,10 @@ const Card = styled.div`
   box-shadow: 2px 2px 4px 0px #cfd8dc;
   background-color: whitesmoke;
   border: 1px solid gainsboro;
+  transition: background-color 0.5s ease;
+  &:hover {
+    background-color: #cacfc9;
+  }
 `;
 
 Card.Header = Header;

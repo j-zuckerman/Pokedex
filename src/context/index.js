@@ -6,6 +6,7 @@ export const PokedexContext = createContext();
 
 const PokedexProvider = ({ children }) => {
   //Pokemon entry for home page
+  const [pokemonToDisplay, setPokemonToDisplay] = useState([]);
   const [pokemonEntries, setPokemonEntries] = useState([]);
 
   //Pokemon details for selected pokemon
@@ -19,6 +20,7 @@ const PokedexProvider = ({ children }) => {
     const response = await pokeApi.get('pokemon/?limit=807');
     console.log(response.data.results);
     setPokemonEntries(response.data.results);
+    setPokemonToDisplay(response.data.results);
   }
 
   async function fetchSpecificPokemon(pokemonId) {
@@ -88,6 +90,18 @@ const PokedexProvider = ({ children }) => {
     console.log(data.chain);
     setEvolutionChain(data.chain);
   }
+
+  async function searchPokemon(searchedPokemon) {
+    console.log(searchedPokemon);
+    setPokemonToDisplay(
+      pokemonEntries.filter(
+        (p) => p.name.toUpperCase() === searchedPokemon.toUpperCase()
+      )
+    );
+
+    console.log(pokemon);
+  }
+
   //Fetch data for homepage
   useEffect(() => {
     fetchPokemonEntries();
@@ -97,12 +111,13 @@ const PokedexProvider = ({ children }) => {
     <PokedexContext.Provider
       value={{
         pokemon,
-        pokemonEntries,
         pokemonSpecies,
         fetchSpecificPokemon,
         fetchPokemonSpecies,
         evolutionDetails,
+        searchPokemon,
         fetchEvolutionChain,
+        pokemonToDisplay,
       }}
     >
       {children}

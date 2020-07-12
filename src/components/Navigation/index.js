@@ -1,8 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Navbar from '../../blocks/Navbar';
-import SearchBar from '../../elements/SearchBar';
 import Title from '../../elements/Title';
+import { Search } from './Search';
 
 export const NavigationBar = ({ page, data }) => {
   let history = useHistory();
@@ -10,7 +10,8 @@ export const NavigationBar = ({ page, data }) => {
   if (page === 'Homepage')
     return (
       <Navbar>
-        <SearchBar type="text" placeholder="Search..."></SearchBar>
+        <Search></Search>
+
         <Title>Pokédex</Title>
       </Navbar>
     );

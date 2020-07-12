@@ -14,13 +14,13 @@ const Layout = styled.div`
 `;
 
 export const Pokedex = () => {
-  const { pokemonEntries } = useContext(PokedexContext);
+  const { pokemonToDisplay } = useContext(PokedexContext);
 
   return (
     <>
       <NavigationBar page={'Homepage'}></NavigationBar>
       <Layout>
-        {pokemonEntries.map((pokemonEntry, index) => (
+        {pokemonToDisplay.map((pokemonEntry, index) => (
           <Link to={`/pokemon/${index + 1}`} style={{ textDecoration: 'none' }}>
             <Card key={index + 1}>
               <Card.Header>
